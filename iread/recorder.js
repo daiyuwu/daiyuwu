@@ -50,6 +50,36 @@ function tryRecorder() {
 }
 
 let recorder = undefined;
+let isRecording = false;
+// let recordBtn = document.getElementById("recordBtn");
+let recordBtn = document.createElement("button");
+recordBtn.setAttribute("id", "recordBtn");
+recordBtn.setAttribute("onclick", "pressRecord()");
+recordBtn.innerHTML = "●";
+// document.getElementById("recorderAudioBlock").append(recordBtn);
+document.getElementById("recorderAudioBlock").prepend(recordBtn);
+
+function pressRecord() {
+    isRecording = !isRecording;
+    if (isRecording === true)
+        processStartRecording();
+    else
+        processStopRecording();
+}
+
+function processStartRecording() {
+    console.log("processStartRecording()");
+    let recordBtn = document.getElementById("recordBtn");
+    recordBtn.innerHTML = "■";
+    startRecording();
+}
+
+function processStopRecording() {
+    console.log("processStopRecording()");
+    let recordBtn = document.getElementById("recordBtn");
+    recordBtn.innerHTML = "●";
+    stopRecording();
+}
 
 function startRecording() {
     HZRecorder.get(function (rec) {
@@ -65,17 +95,21 @@ function stopRecording() {
     recorder.stop();
     var blob = recorder.getBlob();
     var url = URL.createObjectURL(blob);
-    var div = document.createElement('div');
-    var au = document.createElement('audio');
-    var hf = document.createElement('a');
-    au.controls = true;
-    au.src = url;
-    hf.href = url;
-    hf.download = new Date().toISOString() + '.wav';
-    hf.innerHTML = hf.download;
-    div.appendChild(au);
-    div.appendChild(hf);
-    recordingslist.appendChild(div);
+    // var div = document.createElement('div');
+    // var au = document.createElement('audio');
+    // var hf = document.createElement('a');
+    // au.controls = true;
+    // au.src = url;
+    // hf.href = url;
+    // hf.download = new Date().toISOString() + '.wav';
+    // hf.innerHTML = hf.download;
+    // div.appendChild(au);
+    // div.appendChild(hf);
+    // recordingslist.appendChild(div);
+    let recorderAudio = document.getElementById("recorderAudio");
+    let recorderAudioSource = document.getElementById("recorderAudioSource");
+    recorderAudioSource.src = url;
+    recorderAudio.load();
 }
 function playRecording() {
     recorder.play(audio);

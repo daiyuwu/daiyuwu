@@ -1,0 +1,34 @@
+#recordBtn {
+    position: relative;
+    top: -17px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #ffe5e5;
+    color: #e44545;
+    font-size: 30px;
+    outline: none;
+    /* border-color: #a54242; */
+    border-color: #b0b1dc;
+    border-width: 3px;
+    margin-right: 10px;
+}
+
+#recordBtn:hover {
+    /* color: #fb6f6f;
+     */
+    background-color: #f9caca;
+}
+
+#recordBtn::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+#recorderAudioBlock audio {
+    outline: none;
+}

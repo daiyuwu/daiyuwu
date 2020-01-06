@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="./player.css" rel="stylesheet" type="text/css">
+    <link href="./recorder.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="player">
@@ -17,13 +18,16 @@
         </div>
     </div>
     <div id="recorder">
-        <input onclick="startRecording()" type="button" value="錄音" />
-        <input onclick="stopRecording()" type="button" value="停止" />
-        <input onclick="playRecording()" type="button" value="播放" />
-        <input onclick="uploadAudio()" type="button" value="提交" />
+        <div id="recorderAudioBlock"></div>
+        <!-- <input onclick="startRecording()" type="button" value="錄音" />
+        <input onclick="stopRecording()" type="button" value="停止" /> -->
+        <!-- <button type="button" id="recordBtn" onclick="pressRecord()">■</button> -->
+        <!-- <input onclick="playRecording()" type="button" value="播放" /> -->
+        <!-- <input onclick="uploadAudio()" type="button" value="提交" /> -->
         <div id="recordingslist"></div>
     </div>
     <script src="./HZRecorder.js"></script>
+    <script src="./recorderAudio.js"></script>
     <script src="./player.js"></script>
     <script src="./recorder.js"></script>
 </body>
