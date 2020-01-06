@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./player.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="player">
+        <div id="imgBlock"></div>
+        <div id="audioBlock"></div>
+        <div>
+            模式：
+            <input type="radio" name="switch" value="auto" />自動換頁
+            <input type="radio" name="switch" value="pause" />暫停換頁
+        </div>
+    </div>
+    <div id="recorder">
+        <input onclick="startRecording()" type="button" value="錄音" />
+        <input onclick="stopRecording()" type="button" value="停止" />
+        <input onclick="playRecording()" type="button" value="播放" />
+        <input onclick="uploadAudio()" type="button" value="提交" />
+        <div id="recordingslist"></div>
+    </div>
+    <script src="./HZRecorder.js"></script>
+    <script src="./player.js"></script>
+    <script src="./recorder.js"></script>
+</body>
+</html>
